@@ -5,8 +5,6 @@ module.exports = function check(str, bracketsConfig) {
         openedBrackets.push(bracket[0])
         closedBrackets.push(bracket[1])
     })
-    console.log(openedBrackets, closedBrackets)
-    console.log(str.split(''))
     const stack = [];
     let res = true
     str.split('').forEach(bracket => {
@@ -22,6 +20,5 @@ module.exports = function check(str, bracketsConfig) {
             res = false;
         }
     })
-    console.log(stack.length, stack)
     return res && stack.length === 0
 }
